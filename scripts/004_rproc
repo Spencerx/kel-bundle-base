@@ -1,0 +1,7 @@
+#!/bin/bash
+
+exec 2>&1
+set -e
+set -x
+
+curl -s https://storage.googleapis.com/release.kelproject.com/binaries/rproc/rproc-linux-amd64-git-02b5efd8 > /rproc && chmod +x /rproc

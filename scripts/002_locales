@@ -1,0 +1,14 @@
+#!/bin/bash
+
+exec 2>&1
+set -e
+set -x
+
+# language-pack-ja is broken (see https://bugs.launchpad.net/ubuntu/+source/language-pack-ja/+bug/1511405)
+
+apt-cache search language-pack \
+    | cut -d ' ' -f 1 \
+    | grep -v '^language\-pack\-\(gnome\|kde\)\-' \
+    | grep -v '\-base$' \
+    | grep -v '^language-pack-ja' \
+    | xargs apt-get install -y --force-yes --no-install-recommends

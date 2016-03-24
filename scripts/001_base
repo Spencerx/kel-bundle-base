@@ -1,0 +1,66 @@
+#!/bin/bash
+
+exec 2>&1
+set -e
+set -x
+
+cat > /etc/apt/sources.list <<EOF
+deb http://archive.ubuntu.com/ubuntu trusty main
+deb http://archive.ubuntu.com/ubuntu trusty-security main
+deb http://archive.ubuntu.com/ubuntu trusty-updates main
+deb http://archive.ubuntu.com/ubuntu trusty universe
+EOF
+
+apt-get update
+apt-get upgrade -y --force-yes
+apt-get install -y --force-yes \
+    apache2-mpm-worker \
+    apache2-threaded-dev \
+    autoconf \
+    bind9-host \
+    bison \
+    build-essential \
+    coreutils \
+    curl \
+    daemontools \
+    dnsutils \
+    ed \
+    git \
+    imagemagick \
+    iputils-tracepath \
+    language-pack-en \
+    libbz2-dev \
+    libcurl4-openssl-dev \
+    libevent-dev \
+    libglib2.0-dev \
+    libjpeg-dev \
+    libmagickwand-dev \
+    libmysqlclient-dev \
+    libncurses5-dev \
+    libpq-dev \
+    libpq5 \
+    libreadline6-dev \
+    libsasl2-dev \
+    libssl-dev \
+    libxml2-dev \
+    libxslt-dev \
+    netcat-openbsd \
+    openjdk-7-jdk \
+    openjdk-7-jre-headless \
+    openssh-client \
+    pdftk \
+    postgresql-client-9.3 \
+    postgresql-server-dev-9.3 \
+    python \
+    python-dev \
+    redis-tools \
+    ruby \
+    ruby-dev \
+    socat \
+    stunnel \
+    syslinux \
+    tar \
+    telnet \
+    zip \
+    zlib1g-dev \
+    #
