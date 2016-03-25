@@ -7,5 +7,9 @@ else
     BUILD_TAG="git-${TRAVIS_COMMIT:0:8}"
 fi
 
+REPO="quay.io/kelproject/bundle-base"
+
 docker login -e noemail -u $QUAY_USERNAME -p $QUAY_PASSWORD quay.io
-docker push quay.io/kelproject/bundle-base:$BUILD_TAG
+docker tag "$REPO:$BUILD_TAG" "$REPO:latest"
+docker push "$REPO:$BUILD_TAG"
+docker push "$REPO:latest"
