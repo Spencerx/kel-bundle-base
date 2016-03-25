@@ -44,6 +44,7 @@ apt-get install -y --force-yes \
     libssl-dev \
     libxml2-dev \
     libxslt-dev \
+    mercurial \
     netcat-openbsd \
     openjdk-7-jdk \
     openjdk-7-jre-headless \
