@@ -7,4 +7,5 @@ else
     BUILD_TAG="git-${TRAVIS_COMMIT:0:8}"
 fi
 
+docker pull quay.io/kelproject/bundle-base || true
 docker build --tag quay.io/kelproject/bundle-base:$BUILD_TAG .
