@@ -1,13 +1,7 @@
 #!/bin/bash
 set -ev
 
-if [ -n "$TRAVIS_TAG" ]; then
-    BUILD_TAG="$TRAVIS_TAG"
-else
-    BUILD_TAG="git-${TRAVIS_COMMIT:0:8}"
-fi
-
-REPO="quay.io/kelproject/bundle-base"
+. $(dirname $(readlink -f $0))/common.sh
 
 docker login -e noemail -u $QUAY_USERNAME -p $QUAY_PASSWORD quay.io
 docker tag "$REPO:$BUILD_TAG" "$REPO:latest"

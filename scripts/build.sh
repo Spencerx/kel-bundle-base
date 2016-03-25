@@ -1,11 +1,7 @@
 #!/bin/bash
 set -ev
 
-if [ -n "$TRAVIS_TAG" ]; then
-    BUILD_TAG="$TRAVIS_TAG"
-else
-    BUILD_TAG="git-${TRAVIS_COMMIT:0:8}"
-fi
+. $(dirname $(readlink -f $0))/common.sh
 
-docker pull quay.io/kelproject/bundle-base || true
-docker build --tag quay.io/kelproject/bundle-base:$BUILD_TAG .
+docker pull "$REPO" || true
+docker build --tag "$REPO:$BUILD_TAG" .
