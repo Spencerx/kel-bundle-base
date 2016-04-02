@@ -4,4 +4,4 @@ exec 2>&1
 set -e
 set -x
 
-curl -s https://storage.googleapis.com/release.kelproject.com/binaries/rproc/rproc-linux-amd64-git-02b5efd8 > /rproc && chmod +x /rproc
+curl -s https://storage.googleapis.com/release.kelproject.com/binaries/rproc/rproc-linux-amd64-git-9d1a6e8d > /rproc && chmod +x /rproc
