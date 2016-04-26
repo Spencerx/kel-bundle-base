@@ -1,5 +1,5 @@
-Kel API
-=======
+Kel Bundle Base
+===============
 
 .. image:: http://slack.kelproject.com/badge.svg
    :target: http://slack.kelproject.com/
