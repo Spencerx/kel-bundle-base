@@ -4,6 +4,6 @@ exec 2>&1
 set -e
 set -x
 
-# node 4.2.3 (helpful to workaround docker image caches)
-curl -sL https://deb.nodesource.com/setup_4.x | bash -
+# node 6.x (helpful to workaround docker image caches)
+curl -sL https://deb.nodesource.com/setup_6.x | bash -
 apt-get install -y nodejs
