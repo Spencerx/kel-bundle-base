@@ -1,4 +1,4 @@
-FROM ubuntu-debootstrap:14.04
+FROM ubuntu:14.04
 
 COPY ./steps/001_base /tmp/
 RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive /tmp/001_base
